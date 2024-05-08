@@ -95,7 +95,9 @@ internal class FileManifest
     {
         public static string FormatBytesWithSuffix(long bytes)
         {
-            string[] Suffix = { "B", "KB", "MB", "GB", "TB" };
+            // previously here, you used the incorrect terms. you are using 1024 for each thing, even though GB (gigabyte) means 1000.
+            // so i changed it to the correct term, Gibibyte, etc. this is the one that increments up at 1024.
+            string[] Suffix = { "Bi", "KiB", "MiB", "GiB", "TiB" };
             int i;
             double dblSByte = bytes;
             for (i = 0; i < Suffix.Length && bytes >= 1024; i++, bytes /= 1024)
