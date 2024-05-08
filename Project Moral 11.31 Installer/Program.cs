@@ -95,7 +95,7 @@ internal class FileManifest
     {
         public static string FormatBytesWithSuffix(long bytes)
         {
-            string[] Suffix = { "B", "KB", "MB", "GB", "TB" };
+            string[] Suffix = { "Bi", "KiB", "MiB", "GiB", "TiB" };
             int i;
             double dblSByte = bytes;
             for (i = 0; i < Suffix.Length && bytes >= 1024; i++, bytes /= 1024)
